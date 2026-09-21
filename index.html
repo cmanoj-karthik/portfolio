@@ -85,7 +85,7 @@
   .primary{background:linear-gradient(90deg,var(--purple),#6D5CF6);border-color:transparent}
   .secondary{background:rgba(255,255,255,.025)}
   .hero-art{
-    min-height:500px;border:1px solid var(--line);border-radius:32px;position:relative;overflow:hidden;
+    border:1px solid var(--line);border-radius:32px;position:relative;overflow:hidden;
     background:
       linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
       linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px),
@@ -107,9 +107,10 @@
   }
   .ring2{inset:32% 28%;border-color:rgba(34,211,238,.22)}
   .art-copy{
-    position:absolute;left:30px;bottom:30px;right:30px;padding:18px;
-    background:rgba(8,11,18,.76);border:1px solid var(--line);border-radius:16px;
+    position:relative;padding:26px 28px;
+    background:rgba(8,11,18,.92);border-top:1px solid var(--line);
   }
+  .headshot{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover}
   .art-copy small{color:var(--muted);font-weight:700}
   .art-copy strong{display:block;margin-top:7px;font-size:18px}
 
@@ -204,7 +205,7 @@
   @media(max-width:900px){
     .links a:not(.resume){display:none}
     .hero{grid-template-columns:1fr;min-height:auto;padding-top:86px}
-    .hero-art{min-height:360px}
+    .hero-art{width:100%;max-width:480px;justify-self:center}
     .metrics,.toolkit{grid-template-columns:repeat(2,1fr)}
     .role{grid-template-columns:90px 1fr}.chips{grid-column:2}
     .projects,.about-grid{grid-template-columns:1fr}
@@ -249,10 +250,8 @@
         <a class="btn secondary" href="#experience">Experience ↓</a>
       </div>
     </div>
-    <div class="hero-art" aria-label="Abstract distributed systems visualization">
-      <div class="ring"></div>
-      <div class="ring ring2"></div>
-      <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="orb o4"></div>
+    <div class="hero-art">
+      <img class="headshot" src="manoj-headshot.png" alt="Professional portrait of Manoj Karthik Chinniah" width="1254" height="1254" fetchpriority="high" />
       <div class="art-copy">
         <small>CURRENT FOCUS</small>
         <strong>Distributed systems × Cloud × AI automation</strong>
