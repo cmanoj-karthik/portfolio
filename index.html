@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Manoj Karthik Chinniah — Software Engineer</title>
+<meta name="description" content="Manoj Karthik Chinniah — Seattle-based software engineer building distributed systems, cloud infrastructure, and AI-powered automation." />
+<meta name="theme-color" content="#07090F" />
+<style>
+  :root{
+    --bg:#07090F;
+    --bg2:#0B0F18;
+    --surface:#101622;
+    --surface2:#151C2A;
+    --text:#F8FAFC;
+    --muted:#98A2B3;
+    --line:rgba(255,255,255,.09);
+    --purple:#8B5CF6;
+    --cyan:#22D3EE;
+    --orange:#FB923C;
+    --green:#34D399;
+    --max:1180px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  section[id], main[id]{scroll-margin-top:90px}
+  a:focus-visible{outline:2px solid var(--cyan);outline-offset:5px}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    margin:0;
+    background:
+      radial-gradient(circle at 78% 6%, rgba(139,92,246,.18), transparent 26rem),
+      radial-gradient(circle at 14% 42%, rgba(34,211,238,.08), transparent 26rem),
+      var(--bg);
+    color:var(--text);
+    font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--max);margin:auto;padding:0 28px}
+  nav{
+    position:sticky;top:0;z-index:30;
+    backdrop-filter:blur(18px);
+    background:rgba(7,9,15,.72);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    height:72px;display:flex;align-items:center;justify-content:space-between;
+  }
+  .logo{font-weight:900;letter-spacing:-.05em;font-size:22px}
+  .logo span{color:var(--cyan)}
+  .links{display:flex;gap:28px;align-items:center;color:#D0D5DD;font-size:14px}
+  .links a:hover{color:white}
+  .resume{
+    border:1px solid rgba(139,92,246,.5);padding:10px 15px;border-radius:999px;
+    background:rgba(139,92,246,.08)
+  }
+
+  .hero{
+    min-height:810px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;
+    align-items:center;padding:110px 0 80px;
+  }
+  .eyebrow{
+    display:flex;align-items:center;gap:9px;
+    color:#C4B5FD;font-size:13px;font-weight:800;letter-spacing:.15em;
+    text-transform:uppercase;margin-bottom:24px
+  }
+  .dot{width:7px;height:7px;background:var(--green);border-radius:50%;box-shadow:0 0 0 6px rgba(52,211,153,.09)}
+  h1{
+    font-size:clamp(64px,8vw,112px);
+    line-height:.88;margin:0 0 30px;letter-spacing:-.07em;max-width:760px
+  }
+  .grad{
+    background:linear-gradient(90deg,var(--purple),var(--cyan));
+    -webkit-background-clip:text;background-clip:text;color:transparent
+  }
+  .sub{
+    font-size:20px;line-height:1.65;color:#C7D0DD;max-width:690px;margin-bottom:34px
+  }
+  .buttons{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{
+    padding:14px 20px;border-radius:12px;font-weight:800;font-size:14px;
+    border:1px solid var(--line);display:inline-flex;gap:10px;align-items:center
+  }
+  .primary{background:linear-gradient(90deg,var(--purple),#6D5CF6);border-color:transparent}
+  .secondary{background:rgba(255,255,255,.025)}
+  .hero-art{
+    min-height:500px;border:1px solid var(--line);border-radius:32px;position:relative;overflow:hidden;
+    background:
+      linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px),
+      radial-gradient(circle at 50% 45%, rgba(139,92,246,.25), transparent 36%);
+    background-size:36px 36px,36px 36px,auto;
+    box-shadow:0 40px 100px rgba(0,0,0,.35)
+  }
+  .orb{
+    position:absolute;border-radius:50%;filter:blur(.2px);
+    box-shadow:0 0 45px currentColor
+  }
+  .o1{width:18px;height:18px;background:var(--cyan);color:rgba(34,211,238,.35);top:22%;left:28%}
+  .o2{width:13px;height:13px;background:var(--purple);color:rgba(139,92,246,.35);top:38%;right:22%}
+  .o3{width:10px;height:10px;background:var(--orange);color:rgba(251,146,60,.3);bottom:28%;left:37%}
+  .o4{width:8px;height:8px;background:var(--green);color:rgba(52,211,153,.3);bottom:19%;right:28%}
+  .ring{
+    position:absolute;border:1px solid rgba(255,255,255,.13);border-radius:50%;
+    inset:19% 14%;
+  }
+  .ring2{inset:32% 28%;border-color:rgba(34,211,238,.22)}
+  .art-copy{
+    position:absolute;left:30px;bottom:30px;right:30px;padding:18px;
+    background:rgba(8,11,18,.76);border:1px solid var(--line);border-radius:16px;
+  }
+  .art-copy small{color:var(--muted);font-weight:700}
+  .art-copy strong{display:block;margin-top:7px;font-size:18px}
+
+  section{padding:105px 0;border-top:1px solid var(--line)}
+  .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:46px}
+  .kicker{font-size:12px;letter-spacing:.18em;color:#A78BFA;text-transform:uppercase;font-weight:900}
+  h2{font-size:clamp(42px,5vw,72px);letter-spacing:-.055em;margin:8px 0 0;line-height:.98}
+  .section-note{color:var(--muted);max-width:390px;line-height:1.6}
+
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .metric{
+    min-height:185px;padding:24px;border:1px solid var(--line);border-radius:22px;
+    background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.015))
+  }
+  .metric b{font-size:46px;letter-spacing:-.05em}
+  .metric:nth-child(1) b{color:var(--cyan)}
+  .metric:nth-child(2) b{color:#C4B5FD}
+  .metric:nth-child(3) b{color:var(--orange)}
+  .metric:nth-child(4) b{color:var(--green)}
+  .metric span{display:block;color:#C5CDD8;margin-top:16px;line-height:1.45}
+  .metric small{display:block;color:#667085;margin-top:8px}
+
+  .timeline{position:relative}
+  .role{
+    display:grid;grid-template-columns:150px 1fr 230px;gap:30px;
+    padding:34px 0;border-bottom:1px solid var(--line)
+  }
+  .role:last-child{border-bottom:0}
+  .years{color:#98A2B3;font-size:14px;font-weight:800;padding-top:5px}
+  .role h3{font-size:28px;margin:0 0 7px;letter-spacing:-.025em}
+  .company{color:#A78BFA;font-weight:800;margin-bottom:16px}
+  .role p{color:#AAB4C2;line-height:1.7;margin:0;max-width:720px}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;align-content:flex-start}
+  .chip{font-size:11px;color:#D0D5DD;padding:7px 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.025)}
+
+  .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .project{
+    border:1px solid var(--line);border-radius:26px;padding:30px;min-height:360px;
+    background:linear-gradient(145deg,rgba(255,255,255,.035),rgba(255,255,255,.012));
+    position:relative;overflow:hidden
+  }
+  .project:first-child{grid-column:1/-1;min-height:410px}
+  .project:before{
+    content:"";position:absolute;width:280px;height:280px;border-radius:50%;right:-90px;top:-120px;
+    background:radial-gradient(circle,rgba(139,92,246,.22),transparent 68%)
+  }
+  .project:nth-child(2):before{background:radial-gradient(circle,rgba(34,211,238,.18),transparent 68%)}
+  .project:nth-child(3):before{background:radial-gradient(circle,rgba(251,146,60,.18),transparent 68%)}
+  .num{font-size:12px;color:#667085;font-weight:900;letter-spacing:.16em}
+  .project h3{font-size:38px;line-height:1.03;letter-spacing:-.045em;margin:34px 0 18px;max-width:580px}
+  .project p{color:#AAB4C2;line-height:1.65;max-width:650px}
+  .impact{position:absolute;bottom:28px;left:30px;font-size:14px;font-weight:900}
+  .impact span{color:var(--cyan);font-size:26px;margin-right:7px}
+  .project:nth-child(2) .impact span{color:#C4B5FD}
+  .project:nth-child(3) .impact span{color:var(--orange)}
+
+  .about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:24px}
+  .about-card,.edu-card,.tool-card{
+    border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.02)
+  }
+  .about-card{padding:36px}
+  .about-card p{font-size:24px;line-height:1.5;color:#D0D5DD;margin:0}
+  .about-card strong{color:white}
+  .edu-card{padding:28px;display:grid;gap:24px}
+  .edu{padding-bottom:22px;border-bottom:1px solid var(--line)}
+  .edu:last-child{border-bottom:0;padding-bottom:0}
+  .edu small{color:#A78BFA;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+  .edu b{display:block;font-size:20px;margin:9px 0 4px}
+  .edu span{color:#98A2B3}
+
+  .toolkit{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .tool-card{padding:24px;min-height:260px}
+  .tool-card .index{color:#667085;font-weight:900;font-size:12px}
+  .tool-card h4{font-size:18px;margin:25px 0 18px}
+  .tool-card p{color:#AAB4C2;line-height:1.75;margin:0;font-size:14px}
+
+  .contact{
+    border:1px solid var(--line);border-radius:30px;padding:58px;
+    background:
+      radial-gradient(circle at 85% 20%,rgba(34,211,238,.16),transparent 24rem),
+      radial-gradient(circle at 15% 90%,rgba(139,92,246,.18),transparent 24rem),
+      rgba(255,255,255,.02);
+  }
+  .contact h2{font-size:clamp(56px,8vw,108px);max-width:900px}
+  .contact p{font-size:18px;color:#B3BECC;max-width:620px;line-height:1.65;margin:28px 0 34px}
+  .contact-links{display:flex;gap:14px;flex-wrap:wrap}
+  footer{
+    padding:38px 0 46px;color:#667085;font-size:13px;
+    display:flex;justify-content:space-between;gap:20px
+  }
+
+  @media(max-width:900px){
+    .links a:not(.resume){display:none}
+    .hero{grid-template-columns:1fr;min-height:auto;padding-top:86px}
+    .hero-art{min-height:360px}
+    .metrics,.toolkit{grid-template-columns:repeat(2,1fr)}
+    .role{grid-template-columns:90px 1fr}.chips{grid-column:2}
+    .projects,.about-grid{grid-template-columns:1fr}
+    .project:first-child{grid-column:auto}
+  }
+  @media(max-width:600px){
+    .wrap{padding:0 18px}
+    h1{font-size:clamp(44px,10vw,61px)}
+    .contact-links .btn{max-width:100%;overflow-wrap:anywhere;min-width:0}
+    .sub{font-size:17px}
+    .metrics,.toolkit{grid-template-columns:1fr}
+    .role{grid-template-columns:1fr;gap:8px}.chips{grid-column:1}
+    .contact{padding:34px 24px}
+    section{padding:80px 0}
+    .section-head{display:block}.section-note{margin-top:18px}
+    footer{display:block;line-height:1.8}
+  }
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap nav">
+    <a class="logo" href="#top">MK<span>.</span></a>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a class="resume" href="#contact">Contact ↗</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+  <div class="wrap hero">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> Software Engineer • Seattle</div>
+      <h1>I build <span class="grad">systems</span><br>that scale.</h1>
+      <p class="sub">Software Development Engineer focused on distributed systems, cloud infrastructure, and AI-powered automation — building reliable systems that reduce engineering toil and improve operational speed.</p>
+      <div class="buttons">
+        <a class="btn primary" href="#work">View my work →</a>
+        <a class="btn secondary" href="#experience">Experience ↓</a>
+      </div>
+    </div>
+    <div class="hero-art" aria-label="Abstract distributed systems visualization">
+      <div class="ring"></div>
+      <div class="ring ring2"></div>
+      <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div><div class="orb o4"></div>
+      <div class="art-copy">
+        <small>CURRENT FOCUS</small>
+        <strong>Distributed systems × Cloud × AI automation</strong>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="kicker">Impact</div><h2>Measured, not vague.</h2></div>
+        <p class="section-note">Engineering outcomes that turned reliability and automation work into concrete business impact.</p>
+      </div>
+      <div class="metrics">
+        <div class="metric"><b>50%↓</b><span>Incident response time</span><small>Measured by MTTR</small></div>
+        <div class="metric"><b>40%↓</b><span>Incident resolution time</span><small>Automation across AWS infrastructure</small></div>
+        <div class="metric"><b>200+</b><span>Network events / week</span><small>Processed by anomaly detection</small></div>
+        <div class="metric"><b>10+</b><span>Engineer-hours saved / week</span><small>Manual toil eliminated</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="kicker">Experience</div><h2>Building through complexity.</h2></div>
+        <p class="section-note">From application engineering to technical leadership and large-scale cloud infrastructure.</p>
+      </div>
+      <div class="timeline">
+        <div class="role">
+          <div class="years">2023 — NOW</div>
+          <div>
+            <h3>Software Development Engineer</h3>
+            <div class="company">Viasat Inc</div>
+            <p>Engineering real-time anomaly detection and remediation workflows, distributed automation tools, and reliability improvements across multi-region cloud infrastructure. Led design reviews and code quality discussions across engineering teams.</p>
+          </div>
+          <div class="chips"><span class="chip">Python</span><span class="chip">AWS</span><span class="chip">Splunk</span><span class="chip">GitHub Actions</span><span class="chip">Distributed Systems</span></div>
+        </div>
+
+        <div class="role">
+          <div class="years">2020 — 2021</div>
+          <div>
+            <h3>Technical Lead</h3>
+            <div class="company">Doodleblue Innovations</div>
+            <p>Architected offline storage and crash-analysis capabilities across multiple client applications, strengthening reliability and release quality while leading technical delivery.</p>
+          </div>
+          <div class="chips"><span class="chip">Cloud</span><span class="chip">Crashlytics</span><span class="chip">System Design</span><span class="chip">Technical Leadership</span></div>
+        </div>
+
+        <div class="role">
+          <div class="years">2019 — 2020</div>
+          <div>
+            <h3>Software Development Engineer</h3>
+            <div class="company">Doodleblue Innovations</div>
+            <p>Built and scaled a satellite network monitoring platform with real-time map visualization and multiple web integrations, improving issue correlation and observability.</p>
+          </div>
+          <div class="chips"><span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">Prisma</span><span class="chip">Monitoring</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="kicker">Selected Work</div><h2>Systems with a point of view.</h2></div>
+        <p class="section-note">Three projects that best represent how I approach automation, observability, and scalable infrastructure.</p>
+      </div>
+      <div class="projects">
+        <article class="project">
+          <div class="num">01 / AI + INFRASTRUCTURE</div>
+          <h3>AI-assisted network anomaly detection</h3>
+          <p>A distributed anomaly-detection and remediation pipeline using Python, Splunk APIs, GitHub Actions, CI/CD, prompt engineering, and LLM-assisted debugging.</p>
+          <div class="impact"><span>20%↓</span> manual intervention</div>
+        </article>
+        <article class="project">
+          <div class="num">02 / AUTOMATION</div>
+          <h3>Automated audit & notification system</h3>
+          <p>Replaced manual Jira workflows with automated notifications and compliance logic for faster, more reliable operational follow-through.</p>
+          <div class="impact"><span>60%↓</span> manual workload</div>
+        </article>
+        <article class="project">
+          <div class="num">03 / OBSERVABILITY</div>
+          <h3>Advanced DevOps monitoring</h3>
+          <p>Built a scalable satellite network monitoring platform with real-time infrastructure observability and global map visualization.</p>
+          <div class="impact"><span>2×</span> faster issue correlation</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="kicker">About</div><h2>Engineering beyond the ticket.</h2></div>
+        <p class="section-note">I enjoy work where software, infrastructure, reliability, and automation intersect.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <p>I’m <strong>Manoj Karthik Chinniah</strong>, a Seattle-based Software Development Engineer with 4+ years of experience building distributed systems and cloud infrastructure. I care about systems that are <strong>observable, resilient, and easier for engineers to operate</strong>.</p>
+        </div>
+        <div class="edu-card">
+          <div class="edu"><small>Graduate</small><b>M.S., Computer Science and Systems</b><span>University of Washington, Tacoma • 2022</span></div>
+          <div class="edu"><small>Undergraduate</small><b>B.S., Computer Science</b><span>Anna University, College of Engineering, Guindy • 2019</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="kicker">Toolkit</div><h2>What I build with.</h2></div>
+        <p class="section-note">A focused toolkit across backend engineering, cloud infrastructure, systems design, and AI-assisted development.</p>
+      </div>
+      <div class="toolkit">
+        <div class="tool-card"><div class="index">01</div><h4>Languages</h4><p>Python<br>TypeScript<br>JavaScript<br>Java<br>Kotlin<br>SQL</p></div>
+        <div class="tool-card"><div class="index">02</div><h4>Systems</h4><p>Distributed Computing<br>System Design<br>Caching Strategies<br>Data Locality<br>Offline Storage</p></div>
+        <div class="tool-card"><div class="index">03</div><h4>Cloud & DevOps</h4><p>AWS<br>GitHub Actions<br>CI/CD<br>Splunk APIs<br>JIRA APIs<br>Incident Management</p></div>
+        <div class="tool-card"><div class="index">04</div><h4>AI & Frameworks</h4><p>Prompt Engineering<br>LLM-assisted Development<br>Anomaly Detection<br>Next.js<br>Tailwind CSS<br>Prisma ORM</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <div class="kicker">Let’s connect</div>
+        <h2>Have an interesting <span class="grad">problem</span> to solve?</h2>
+        <p>I’m interested in software engineering work involving distributed systems, cloud infrastructure, developer productivity, and intelligent automation.</p>
+        <div class="contact-links">
+          <a class="btn primary" href="mailto:cmanojkarthik@gmail.com">cmanojkarthik@gmail.com ↗</a>
+          <a class="btn secondary" href="https://www.linkedin.com/in/manoj-karthik/">LinkedIn ↗</a>
+        </div>
+      </div>
+      <footer>
+        <div>Manoj Karthik Chinniah • Seattle, Washington</div>
+        <div>Software Engineer • Distributed Systems • Cloud • AI Automation</div>
+      </footer>
+    </div>
+  </section>
+</main>
+</body>
+</html>
